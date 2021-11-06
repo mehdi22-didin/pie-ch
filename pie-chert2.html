@@ -1,0 +1,41 @@
+<html>
+<head></head>
+<body>
+<div id="myPie"></div>
+<script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+<!-- <script src="https://d3js.org/d3-selection.v1.js"></script> -->
+
+<script src="../pie-chert2/d3.v4.min.js"></script>
+<script src="../pie-chert2/d3pie.min.js"></script>
+<script>
+    var pie = new d3pie("myPie", {
+    header: {
+        title: {
+            text: "Analyse sur les maladies les plus frequents"
+        }
+    },
+    data: {
+        content: [
+            { label: "Asthmatique", value: 6 },
+            { label: "Diabete", value: 34 },
+            { label: "La tension(HTA)", value: 25},
+            { label: "Maladies cardiaques", value: 2},
+            { label: "Autres Maladies", value: 33},
+        ]
+     },
+ 
+   
+     callbacks: {
+        onMouseoverSegment: function(info) {
+            console.log("mouse in", info);
+        },
+        onMouseoutSegment: function(info) {
+            console.log("mouseout:", info);
+        }
+    }
+      
+});
+ 
+</script>
+</body>
+</html>
